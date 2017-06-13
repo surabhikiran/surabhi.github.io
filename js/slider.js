@@ -28,6 +28,75 @@ function thumb_slider(settings)
 
 }
 
+
+function thumb_slider1(settings)
+{
+
+    
+
+    settings.thumbs_width = 4324;
+    settings.thumbs_width = document.getElementById(settings.parent_id).getElementsByClassName(settings.container_class)[0].getElementsByClassName( settings.thumb_class)[0].offsetWidth;
+    settings.thumbs_count = document.getElementById(settings.parent_id).getElementsByClassName(settings.container_class)[0].getElementsByClassName(settings.thumb_class).length;
+    
+ 
+
+    for (i = 0; i < settings.thumbs_count; i++) {
+        document.getElementById(settings.parent_id).getElementsByClassName(settings.container_class)[0].getElementsByClassName(settings.thumb_class)[i].style.left = ((i * settings.thumbs_width) + (settings.spacing * i)).toString() + "px";
+        document.getElementById(settings.parent_id).getElementsByClassName(settings.container_class)[0].getElementsByClassName(settings.thumb_class)[i].style.right = "auto";
+
+    }
+    
+    var temp = document.getElementById(settings.parent_id).getElementsByClassName(settings.next_class)[0];
+    $(temp).click(function () { next_thumb(settings) })
+    temp = document.getElementById(settings.parent_id).getElementsByClassName(settings.prev_class)[0];
+    $(temp).click(function () { prev_thumb(settings) })
+
+
+    autotimer(settings);
+    temp = document.getElementById(settings.parent_id);
+    $(temp).hover(function () { hoverStart(settings); }, function () { hoverStop(settings); });
+
+}
+
+
+
+
+
+function thumb_slider2(settings)
+{
+
+    
+
+    settings.thumbs_width = 4324;
+    settings.thumbs_width = document.getElementById(settings.parent_id).getElementsByClassName(settings.container_class)[0].getElementsByClassName( settings.thumb_class)[0].offsetWidth;
+    settings.thumbs_count = document.getElementById(settings.parent_id).getElementsByClassName(settings.container_class)[0].getElementsByClassName(settings.thumb_class).length;
+    
+ 
+
+    for (i = 0; i < settings.thumbs_count; i++) {
+        document.getElementById(settings.parent_id).getElementsByClassName(settings.container_class)[0].getElementsByClassName(settings.thumb_class)[i].style.left = ((i * settings.thumbs_width) + (settings.spacing * i)).toString() + "px";
+        document.getElementById(settings.parent_id).getElementsByClassName(settings.container_class)[0].getElementsByClassName(settings.thumb_class)[i].style.right = "auto";
+
+    }
+    
+    var temp = document.getElementById(settings.parent_id).getElementsByClassName(settings.next_class)[0];
+    $(temp).click(function () { next_thumb(settings) })
+    temp = document.getElementById(settings.parent_id).getElementsByClassName(settings.prev_class)[0];
+    $(temp).click(function () { prev_thumb(settings) })
+
+
+    autotimer(settings);
+    temp = document.getElementById(settings.parent_id);
+    $(temp).hover(function () { hoverStart(settings); }, function () { hoverStop(settings); });
+
+}
+
+
+
+
+
+
+
 function next_thumb(settings) {
       
     clearTimeout(settings.timer);
